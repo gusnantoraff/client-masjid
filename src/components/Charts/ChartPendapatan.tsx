@@ -1,0 +1,119 @@
+"use client";
+
+import dynamic from "next/dynamic";
+import React from "react";
+import DefaultSelectOption from "@/components/SelectOption/DefaultSelectOption";
+import { ApexOptions } from "apexcharts";
+
+// Dynamic import ReactApexChart with ssr disabled
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
+
+const ChartPendapatan: React.FC = () => {
+  const series = [
+    {
+      name: "Statistik Pendapatan",
+      data: [44, 55, 41, 67, 22, 43, 65],
+    },
+  ];
+
+  const options: ApexOptions = {
+    colors: ["#5286F8", "#5286F8"],
+    chart: {
+      fontFamily: "Satoshi, sans-serif",
+      type: "bar",
+      height: 335,
+      stacked: true,
+      toolbar: {
+        show: false,
+      },
+      zoom: {
+        enabled: false,
+      },
+    },
+    responsive: [
+      {
+        breakpoint: 1536,
+        options: {
+          plotOptions: {
+            bar: {
+              borderRadius: 3,
+              columnWidth: "25%",
+            },
+          },
+        },
+      },
+    ],
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        borderRadius: 3,
+        columnWidth: "25%",
+        borderRadiusApplication: "end",
+        borderRadiusWhenStacked: "last",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    grid: {
+      strokeDashArray: 5,
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: true,
+        },
+      },
+    },
+    xaxis: {
+      categories: ["M", "T", "W", "T", "F", "S", "S"],
+    },
+    legend: {
+      position: "top",
+      horizontalAlign: "left",
+      fontFamily: "Satoshi",
+      fontWeight: 500,
+      fontSize: "14px",
+      markers: {
+        strokeWidth: 10,
+        strokeColor: "transparent",
+        fillColors: ["#5750F1", "#0ABEF9"],
+      },
+    },
+    fill: {
+      opacity: 1,
+    },
+  };
+
+  return (
+    <div className="col-span-12 rounded-[10px] bg-white px-7.5 pt-7.5 shadow-1 dark:bg-gray-dark dark:shadow-card xl:col-span-5">
+      <div className="mb-4 justify-between gap-4 sm:flex">
+        <div>
+          <h4 className="text-body-2xlg font-bold text-dark dark:text-white">
+            Pendapatan
+          </h4>
+        </div>
+        <div>
+          <DefaultSelectOption options={["6 bulan", "1 tahun"]} />
+        </div>
+      </div>
+      <div>
+        <div id="chartTwo" className="-ml-3.5">
+          <ReactApexChart
+            options={options}
+            series={series}
+            type="bar"
+            height={240}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ChartPendapatan;
