@@ -21,7 +21,7 @@ const ForgotPage: React.FC = () => {
     setSuccessMessage('');
 
     try {
-      const response = await fetch('http://localhost:8000/api/forgot-password', {
+      const response = await fetch('https://backend-masjid-production.up.railway.app/forgot-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -20,7 +20,7 @@ const DropdownNotification = () => {
     const fetchNotifications = async () => {
       setLoading(true);
       try {
-        const data: Notification[] = await fetchWithAuth('http://localhost:8000/api/pesan-website');
+        const data: Notification[] = await fetchWithAuth('https://backend-masjid-production.up.railway.app/pesan-website');
         data.sort((a, b) => new Date(b.tanggal).getTime() - new Date(a.tanggal).getTime());
         setNotifications(data);
       } catch (error) {

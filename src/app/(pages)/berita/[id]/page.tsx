@@ -57,7 +57,7 @@ const ArticleDetailPage = ({ params }: { params: { id: string } }) => {
 
     const fetchArticleData = () => {
         setLoading(true);
-        fetchWithAuth(`http://localhost:8000/api/berita/${id}`)   
+        fetchWithAuth(`https://backend-masjid-production.up.railway.app/berita/${id}`)   
             .then((data) => {
                 if (!data) {
                     notFound();

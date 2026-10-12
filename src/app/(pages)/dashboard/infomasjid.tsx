@@ -3,7 +3,7 @@ import { FiPhone, FiMapPin } from "react-icons/fi";
 import fetchWithAuth from "@/utils/fetch";
 
 // URL API
-const fetchUrl = 'http://localhost:8000/api/info-masjid';
+const fetchUrl = 'https://backend-masjid-production.up.railway.app/info-masjid';
 
 interface InfoMasjidData {
     id: number;

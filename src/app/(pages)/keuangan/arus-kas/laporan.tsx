@@ -891,7 +891,7 @@ export default function AccessibleTable({
                                     onClick={async () => {
                                         try {
                                             await fetchWithAuth(
-                                                `http://localhost:8000/api/arus-kas/${selectedRow.id}`,
+                                                `https://backend-masjid-production.up.railway.app/arus-kas/${selectedRow.id}`,
                                                 {
                                                     method: "PUT",
                                                     headers: {

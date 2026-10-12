@@ -37,7 +37,7 @@ export const UserProvider = ({ children }: UserProviderProps) => {
 
   const fetchUser = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/me", {
+      const response = await fetch("https://backend-masjid-production.up.railway.app/me", {
         method: "GET",
         credentials: "include",
       });

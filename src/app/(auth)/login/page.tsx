@@ -20,7 +20,7 @@ const LoginPage: React.FC = () => {
     setErrorMessage('');
 
     try {
-        const response = await fetch('http://localhost:8000/api/login', {
+        const response = await fetch('https://backend-masjid-production.up.railway.app/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

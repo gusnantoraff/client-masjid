@@ -68,7 +68,7 @@ export default function ProfileForm() {
 
   const handleSubmit = async () => {
     try {
-      await fetchWithAuth(`http://localhost:8000/api/users/${user?.id}`, {
+      await fetchWithAuth(`https://backend-masjid-production.up.railway.app/users/${user?.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -91,7 +91,7 @@ export default function ProfileForm() {
     formData.append("avatar", file);
 
     try {
-      await fetchWithAuth(`http://localhost:8000/api/users/${user?.id}/avatar`, {
+      await fetchWithAuth(`https://backend-masjid-production.up.railway.app/users/${user?.id}/avatar`, {
         method: "POST",
         body: formData,
       });

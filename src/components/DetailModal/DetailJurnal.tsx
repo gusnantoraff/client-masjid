@@ -30,7 +30,7 @@ export default function DetailJurnal({
     
             // Kirim permintaan PUT untuk memperbarui data arus kas
             const response = await fetchWithAuth(
-                `http://localhost:8000/api/arus-kas/${rowData.id}`,
+                `https://backend-masjid-production.up.railway.app/arus-kas/${rowData.id}`,
                 {
                     method: "PUT",
                     headers: {

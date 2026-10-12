@@ -35,7 +35,7 @@ const Akun = ({ params }: { params: { id: string } }) => {
   const [formData, setFormData] = useState<Akun | null>(null);
 
   useEffect(() => {
-    fetchWithAuth(`http://localhost:8000/api/users/${id}`)
+    fetchWithAuth(`https://backend-masjid-production.up.railway.app/users/${id}`)
       .then((data) => {
         if (!data) {
           notFound();
@@ -79,7 +79,7 @@ const Akun = ({ params }: { params: { id: string } }) => {
   };
 
   const handleSubmit = () => {
-    fetchWithAuth(`http://localhost:8000/api/users/${id}`, {
+    fetchWithAuth(`https://backend-masjid-production.up.railway.app/users/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -88,7 +88,7 @@ const Akun = ({ params }: { params: { id: string } }) => {
     })
       .then((updatedData) => {
 
-        fetchWithAuth(`http://localhost:8000/api/users/${id}`)
+        fetchWithAuth(`https://backend-masjid-production.up.railway.app/users/${id}`)
           .then((data) => {
             setAkun(data);
             setIsEditing(false);

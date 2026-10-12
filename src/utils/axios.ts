@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  baseURL: 'https://backend-masjid-production.up.railway.app',
 });
 
 axiosInstance.interceptors.request.use(

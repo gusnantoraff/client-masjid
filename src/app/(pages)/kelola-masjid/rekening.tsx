@@ -202,7 +202,7 @@ const handleRestoreSubmit = async () => {
 
   const confirmDelete = async () => {
     try {
-      await fetchWithAuth(`http://localhost:8000/api/rekening-bank/${deleteId}`, {
+      await fetchWithAuth(`https://backend-masjid-production.up.railway.app/rekening-bank/${deleteId}`, {
         method: 'DELETE',
       });
 

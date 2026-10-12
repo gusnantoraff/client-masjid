@@ -14,7 +14,7 @@ export default function PengeluaranChart({ filter }) {
     // Fetch data from API
     const fetchData = async () => {
       try {
-        const result = await fetchWithAuth("http://localhost:8000/api/pengeluaran-kas");
+        const result = await fetchWithAuth("https://backend-masjid-production.up.railway.app/pengeluaran-kas");
         // Filter data based on month and year
         const filteredData = result.filter((item) => {
           const date = new Date(item.tanggal);

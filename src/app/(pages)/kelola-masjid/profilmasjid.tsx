@@ -20,7 +20,7 @@ const ProfilMasjid = () => {
 
   const fetchMasjidInfo = async () => {
     try {
-      const data = await fetchWithAuth('http://localhost:8000/api/info-masjid/1');
+      const data = await fetchWithAuth('https://backend-masjid-production.up.railway.app/info-masjid/1');
       setNamaMasjid(data.nama_masjid);
       setAlamatMasjid(data.alamat);
       setDeskripsiMasjid(data.deskripsi);
@@ -49,7 +49,7 @@ const ProfilMasjid = () => {
 
   const handleSaveClick = async () => {
     try {
-       await fetchWithAuth('http://localhost:8000/api/info-masjid/1', {
+       await fetchWithAuth('https://backend-masjid-production.up.railway.app/info-masjid/1', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

@@ -30,7 +30,7 @@ const Home = () => {
         const fetchPengeluaranTotal = async () => {
             try {
                 const result = await fetchWithAuth(
-                    "http://localhost:8000/api/arus-kas");
+                    "https://backend-masjid-production.up.railway.app/arus-kas");
 
                     if (result && result.length > 0) {
                         const filteredData = result[0].penerimaan_kas.filter((item) => {

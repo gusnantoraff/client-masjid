@@ -20,7 +20,7 @@ const StatsArus: React.FC<StatsArusProps> = ({
         const fetchData = async () => {
             try {
                 const result = await fetchWithAuth(
-                    "http://localhost:8000/api/arus-kas",
+                    "https://backend-masjid-production.up.railway.app/arus-kas",
                 );
                 // Filter data for current month
                 const filteredData = result.map((item: any) => {

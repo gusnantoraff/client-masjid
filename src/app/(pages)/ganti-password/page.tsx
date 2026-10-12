@@ -60,7 +60,7 @@ const GantiPassword = () => {
     try {
       setIsLoading(true);
 
-      await axios.post('http://localhost:8000/api/change-password', {
+      await axios.post('https://backend-masjid-production.up.railway.app/change-password', {
         current_password,
         new_password,
         password_confirmation,

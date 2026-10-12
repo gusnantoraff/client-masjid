@@ -24,7 +24,7 @@ const PesanDetail = ({ params }: { params: { id: string } }) => {
     const [error, setError] = useState<string>("");
 
     useEffect(() => {
-        fetchWithAuth(`http://localhost:8000/api/pesan-website/${id}`)
+        fetchWithAuth(`https://backend-masjid-production.up.railway.app/pesan-website/${id}`)
             .then((data) => {
                 if (!data) {
                     notFound();

@@ -14,7 +14,7 @@ export default function PendapatanChart({ filter }) {
         const fetchData = async () => {
             try {
                 const result = await fetchWithAuth(
-                    "http://localhost:8000/api/penerimaan-kas",
+                    "https://backend-masjid-production.up.railway.app/penerimaan-kas",
                 );
                 // Filter data based on month and year
                 const filteredData = result.filter((item) => {
